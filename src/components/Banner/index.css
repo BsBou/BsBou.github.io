@@ -1,0 +1,10 @@
+.banner {
+  background-color: #284b63;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+.banner-text h1 {
+  margin: 0px;
+}
