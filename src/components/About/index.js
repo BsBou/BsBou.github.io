@@ -2,6 +2,8 @@ import './index.css'
 import Profile from '../../assets/images/Borhan.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import Stack from '../Stack'
+
 const About = () => {
   return (
     <div id="about" className="h-screen flex flex-col">
@@ -41,7 +43,9 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className="tech-stack"></div>
+      <div className="tech-stack">
+        <Stack />
+      </div>
     </div>
   )
 }
