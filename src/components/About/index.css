@@ -1,4 +1,7 @@
-.left-profile img {
+#about {
+  padding-inline: 6vw;
+}
+.profile-body img {
   border-top-left-radius: 200px;
   border-top-right-radius: 200px;
 }
