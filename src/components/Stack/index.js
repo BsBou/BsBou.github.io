@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-
 import './index.css'
 
 const Stack = () => {
@@ -25,7 +24,7 @@ const Stack = () => {
       icon: 'devicon-tailwindcss-original-wordmark colored',
     },
     { id: 7, skill: 'Ruby', icon: 'devicon-ruby-plain-wordmark colored' },
-    { id: 8, skill: 'Ruby', icon: 'devicon-ruby-plain-wordmark colored' },
+    { id: 8, skill: 'Sass/Scss', icon: 'devicon-sass-original colored' },
   ]
 
   // const [visibleSlide, setVisibleSlide] = useState(1)
@@ -48,18 +47,12 @@ const Stack = () => {
             modules={[Autoplay, Navigation, Pagination]}
             // spaceBetween={10}
             slidesPerView={3}
+            centeredSlides={true}
             breakpoints={{ 600: { slidesPerView: 8 } }}
-            effect={'fade'}
             loop={true}
-            autoplay={{ delay: 2000 }}
+            autoplay={{ delay: 2000, disableOnInteraction: false }}
             fadeEffect={{ crossFade: true }}
             // pagination={{ clickable: true, dynamicBullets: true }}
-            navigation={
-              {
-                // nextEl: '.swiper-button-next-unique',
-                // prevEl: '.swiper-button-prev-unique',
-              }
-            }
           >
             {skillItems}
           </Swiper>
