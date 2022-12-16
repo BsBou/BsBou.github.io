@@ -10,7 +10,7 @@ const Banner = () => {
         <div className="h-4/5 flex flex-col justify-center">
           <h1 className="text-6xl text-center">
             {' '}
-            Definitely? Borhan Boulandier
+            Definitely not Borhan Boulandier
           </h1>
           <h1 className="text-5xl text-center">Full-stack developer</h1>
         </div>
