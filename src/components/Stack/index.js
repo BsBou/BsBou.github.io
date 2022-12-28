@@ -27,8 +27,6 @@ const Stack = () => {
     { id: 8, skill: 'Sass/Scss', icon: 'devicon-sass-original colored' },
   ]
 
-  // const [visibleSlide, setVisibleSlide] = useState(1)
-
   const skillItems = skills.map((skill) => (
     <SwiperSlide>
       <div className="flex flex-col justify-evenly items-center  w-24 h-28 border border-black text-6xl active">
@@ -52,7 +50,6 @@ const Stack = () => {
             loop={true}
             autoplay={{ delay: 2000, disableOnInteraction: false }}
             fadeEffect={{ crossFade: true }}
-            // pagination={{ clickable: true, dynamicBullets: true }}
           >
             {skillItems}
           </Swiper>
@@ -61,55 +58,6 @@ const Stack = () => {
       </div>
     </div>
   )
-
-  /* const [index, setIndex] = useState(0)
-
-  const mod = (n, m) => {
-    let result = n % m
-    return result >= 0 ? result : result + m
-  }
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIndex((index + 1) % skills.length)
-    }, 3000)
-  }, [index])
-
-  return (
-    <div className="flex flex-col items-center h-full">
-      <h2 className="text-3xl">Tech Stack</h2>
-      <div className="flex h-full items-center w-3/4  border border-black justify-evenly">
-
-        {skills.map((item, i) => {
-          const indexLeft = mod(index - 1, skills.length)
-          const indexRight = mod(index + 1, skills.length)
-          let className = ''
-
-          if (i === index) {
-            className = 'active '
-          } else if (i === indexRight) {
-            className = 'right '
-          } else if (i === indexLeft) {
-            className = 'left '
-          }
-
-          return (
-            <div
-              key={item.id}
-              className={
-                className +
-                'flex flex-col justify-evenly items-center  p-1 border border-black w-36 h-40 text-6xl'
-              }
-            >
-              <i className={item.icon}></i>
-              <p className="text-2xl">{item.skill}</p>
-            </div>
-          )
-        })}
-      </div>
-    </div>
-  )
-  */
 }
 
 export default Stack
