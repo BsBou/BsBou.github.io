@@ -3,6 +3,10 @@ import emailjs from '@emailjs/browser'
 
 import './index.css'
 const Contact = () => {
+  const YOUR_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE
+  const YOUR_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE
+  const YOUR_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC
+
   const form = useRef()
 
   const sendEmail = (e) => {
@@ -10,10 +14,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        YOUR_SERVICE_ID,
+        YOUR_TEMPLATE_ID,
         form.current,
-        'YOUR_PUBLIC_KEY'
+        YOUR_PUBLIC_KEY
       )
       .then(
         (result) => {
