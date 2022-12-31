@@ -9,26 +9,24 @@ import './index.css'
 
 const Stack = () => {
   const skills = [
-    { id: 1, skill: 'React', icon: 'devicon-devicon-plain colored' },
-    { id: 2, skill: 'Rails', icon: 'devicon-rails-plain-wordmark colored' },
+    { skill: 'React', icon: 'devicon-devicon-plain colored' },
+    { skill: 'Rails', icon: 'devicon-rails-plain-wordmark colored' },
     {
-      id: 3,
       skill: 'PostgreSQL',
       icon: 'devicon-postgresql-plain-wordmark colored',
     },
-    { id: 4, skill: 'Figma', icon: 'devicon-figma-plain colored' },
-    { id: 5, skill: 'JavaScript', icon: 'devicon-javascript-plain colored' },
+    { skill: 'Figma', icon: 'devicon-figma-plain colored' },
+    { skill: 'JavaScript', icon: 'devicon-javascript-plain colored' },
     {
-      id: 6,
       skill: 'Tailwind',
       icon: 'devicon-tailwindcss-original-wordmark colored',
     },
-    { id: 7, skill: 'Ruby', icon: 'devicon-ruby-plain-wordmark colored' },
-    { id: 8, skill: 'Sass/Scss', icon: 'devicon-sass-original colored' },
+    { skill: 'Ruby', icon: 'devicon-ruby-plain-wordmark colored' },
+    { skill: 'Sass/Scss', icon: 'devicon-sass-original colored' },
   ]
 
   const skillItems = skills.map((skill) => (
-    <SwiperSlide>
+    <SwiperSlide key={skill.skill}>
       <div className="flex flex-col justify-evenly items-center  w-24 h-28 border border-black text-6xl active">
         <i className={skill.icon}></i>
         <p className="text-base">{skill.skill}</p>

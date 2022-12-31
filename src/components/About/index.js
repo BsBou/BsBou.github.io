@@ -49,7 +49,7 @@ const About = () => {
             London, UK
           </span>
         </div>
-        <hr class="mt-4 h-px bg-gray-200 border-0 dark:bg-gray-700" />
+        <hr className="mt-4 h-px bg-gray-200 border-0 dark:bg-gray-700" />
 
         <div className="profile-text flex flex-col text-center basis-2/3 items-center justify-center py-4">
           {/* <div className="border-t-2"> */}

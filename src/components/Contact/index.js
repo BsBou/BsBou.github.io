@@ -39,7 +39,7 @@ const Contact = () => {
         <input type="email" name="user_email" className="border" />
         <label>Message</label>
         <textarea name="message" className="border mb-4" />
-        <div class="g-recaptcha" data-sitekey={RECAPTCHA_SITE_KEY}></div>
+        <div className="g-recaptcha" data-sitekey={RECAPTCHA_SITE_KEY}></div>
         <br />
         <input type="submit" value="Send" />
       </form>
