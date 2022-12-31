@@ -1,18 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.8cb87ce4.css",
-    "main.js": "/static/js/main.773429bc.js",
+    "main.css": "/static/css/main.572fa630.css",
+    "main.js": "/static/js/main.1eb165e6.js",
     "static/js/787.5129302f.chunk.js": "/static/js/787.5129302f.chunk.js",
     "static/media/trace.gif": "/static/media/trace.0e510a90271fe72e9b18.gif",
+    "static/media/WITW-mobile.gif": "/static/media/WITW-mobile.905597a958b78a65bcb2.gif",
     "static/media/whippet-good-screen.png": "/static/media/whippet-good-screen.f4ed781776615c80bb6b.png",
     "static/media/Borhan.jpg": "/static/media/Borhan.61705973873263b20fb2.jpg",
+    "static/media/WITW.png": "/static/media/WITW.b808236a5314a91ca71e.png",
     "index.html": "/index.html",
-    "main.8cb87ce4.css.map": "/static/css/main.8cb87ce4.css.map",
-    "main.773429bc.js.map": "/static/js/main.773429bc.js.map",
+    "main.572fa630.css.map": "/static/css/main.572fa630.css.map",
+    "main.1eb165e6.js.map": "/static/js/main.1eb165e6.js.map",
     "787.5129302f.chunk.js.map": "/static/js/787.5129302f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8cb87ce4.css",
-    "static/js/main.773429bc.js"
+    "static/css/main.572fa630.css",
+    "static/js/main.1eb165e6.js"
   ]
 }
