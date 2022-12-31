@@ -31,7 +31,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="pb-20">
-      <h1 className="text-5xl p-4 ">Contact</h1>
+      <h1 className="text-5xl p-4 font-medium">Contact</h1>
       <form ref={form} onSubmit={sendEmail} className="flex flex-col">
         <label>Name</label>
         <input type="text" name="user_name" className="border" />

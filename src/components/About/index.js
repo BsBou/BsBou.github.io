@@ -11,12 +11,15 @@ import { faLinkedin, faSquareGithub } from '@fortawesome/free-brands-svg-icons'
 const About = () => {
   return (
     <section id="about" className="flex flex-col ">
-      <h1 className="text-5xl p-4">About</h1>
+      <h1 className="text-5xl p-4 font-medium">About</h1>
       <div className="flex flex-col sm:flex-row flex-grow">
         <div className="profile-body flex flex-col justify-center basis-1/3 items-center py-4">
           <div className=" my-0 mx-auto text-center">
             <img src={Profile} className="m-auto pb-1  w-5/12" alt="profile" />
-            <div className="text-5xl m-auto flex justify-evenly w-4/5 p-4">
+            <div
+              className="text-5xl m-auto flex justify-evenly w-4/5 p-4"
+              id="socials"
+            >
               <a
                 href="https://github.com/BsBou"
                 target={'_blank'}
