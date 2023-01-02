@@ -9,20 +9,20 @@ import './index.css'
 
 const Stack = () => {
   const skills = [
-    { skill: 'React', icon: 'devicon-devicon-plain colored' },
-    { skill: 'Rails', icon: 'devicon-rails-plain-wordmark colored' },
+    { skill: 'React', icon: 'devicon-devicon-plain' },
+    { skill: 'Rails', icon: 'devicon-rails-plain-wordmark' },
     {
       skill: 'PostgreSQL',
-      icon: 'devicon-postgresql-plain-wordmark colored',
+      icon: 'devicon-postgresql-plain-wordmark',
     },
-    { skill: 'Figma', icon: 'devicon-figma-plain colored' },
-    { skill: 'JavaScript', icon: 'devicon-javascript-plain colored' },
+    { skill: 'Figma', icon: 'devicon-figma-plain' },
+    { skill: 'JavaScript', icon: 'devicon-javascript-plain' },
     {
       skill: 'Tailwind',
-      icon: 'devicon-tailwindcss-original-wordmark colored',
+      icon: 'devicon-tailwindcss-original-wordmark',
     },
-    { skill: 'Ruby', icon: 'devicon-ruby-plain-wordmark colored' },
-    { skill: 'Sass/Scss', icon: 'devicon-sass-original colored' },
+    { skill: 'Ruby', icon: 'devicon-ruby-plain-wordmark' },
+    { skill: 'Sass/Scss', icon: 'devicon-sass-original' },
   ]
 
   const skillItems = skills.map((skill) => (

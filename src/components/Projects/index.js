@@ -9,7 +9,8 @@ const Project = (props) => {
     <div className="flex flex-col items-center mb-16">
       <div>
         <img
-          className="w-full md:w-3/5 relative hover:z-10"
+          id="project-image"
+          className="w-full md:w-3/5 relative hover:z-10 hover:"
           src={props.img}
           alt="props demo"
         ></img>

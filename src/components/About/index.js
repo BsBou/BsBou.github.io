@@ -7,6 +7,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import Stack from '../Stack'
 import { faLinkedin, faSquareGithub } from '@fortawesome/free-brands-svg-icons'
+import { ReactComponent as LinkedInSVG } from '../../assets/images/linkedin.svg'
+import { ReactComponent as MailSVG } from '../../assets/images/mail.svg'
+import { ReactComponent as GithubSVG } from '../../assets/images/github.svg'
+// import { ReactComponent as LinkedInSVG } from '../../assets/images/linkedin.svg'
+// import { ReactComponent as LinkedInSVG } from '../../assets/images/linkedin.svg'
 
 const About = () => {
   return (
@@ -25,7 +30,8 @@ const About = () => {
                 target={'_blank'}
                 rel="noreferrer"
               >
-                <FontAwesomeIcon icon={faSquareGithub} />
+                {/* <FontAwesomeIcon icon={faSquareGithub} /> */}
+                <GithubSVG />
               </a>
 
               <a
@@ -33,14 +39,15 @@ const About = () => {
                 target={'_blank'}
                 rel="noreferrer"
               >
-                <FontAwesomeIcon icon={faLinkedin} />
+                <LinkedInSVG />
               </a>
               <a
                 href="mailto:borhan.boulandier@gmail.com"
                 target={'_blank'}
                 rel="noreferrer"
               >
-                <FontAwesomeIcon icon={faEnvelopeSquare} />
+                <MailSVG />
+                {/* <FontAwesomeIcon icon={faEnvelopeSquare} /> */}
               </a>
             </div>
           </div>

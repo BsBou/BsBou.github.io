@@ -1,3 +1,13 @@
 #projects {
   padding-inline: 6vw;
 }
+
+#project-image {
+  -webkit-filter: brightness(0.7);
+  filter: brightness(0.7);
+}
+
+#project-image:hover {
+  -webkit-filter: none !important;
+  filter: none !important;
+}
