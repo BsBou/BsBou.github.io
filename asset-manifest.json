@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.572fa630.css",
-    "main.js": "/static/js/main.1eb165e6.js",
+    "main.css": "/static/css/main.57b24109.css",
+    "main.js": "/static/js/main.8624d1fb.js",
     "static/js/787.5129302f.chunk.js": "/static/js/787.5129302f.chunk.js",
     "static/media/trace.gif": "/static/media/trace.0e510a90271fe72e9b18.gif",
     "static/media/WITW-mobile.gif": "/static/media/WITW-mobile.905597a958b78a65bcb2.gif",
@@ -9,12 +9,15 @@
     "static/media/Borhan.jpg": "/static/media/Borhan.61705973873263b20fb2.jpg",
     "static/media/WITW.png": "/static/media/WITW.b808236a5314a91ca71e.png",
     "index.html": "/index.html",
-    "main.572fa630.css.map": "/static/css/main.572fa630.css.map",
-    "main.1eb165e6.js.map": "/static/js/main.1eb165e6.js.map",
+    "static/media/github.svg": "/static/media/github.e7ab8675a2cbadea548cafe724065b9e.svg",
+    "static/media/linkedin.svg": "/static/media/linkedin.9e52cf326e0bbf3cd9a3378906c0d35c.svg",
+    "static/media/mail.svg": "/static/media/mail.eee1baa73917a6ad8cc5ab655510875a.svg",
+    "main.57b24109.css.map": "/static/css/main.57b24109.css.map",
+    "main.8624d1fb.js.map": "/static/js/main.8624d1fb.js.map",
     "787.5129302f.chunk.js.map": "/static/js/787.5129302f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.572fa630.css",
-    "static/js/main.1eb165e6.js"
+    "static/css/main.57b24109.css",
+    "static/js/main.8624d1fb.js"
   ]
 }
