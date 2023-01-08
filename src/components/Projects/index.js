@@ -1,20 +1,29 @@
 import './index.css'
+import React, { useEffect, useState } from 'react'
 import TraceGif from '../../assets/images/trace.gif'
 import WhippetGood from '../../assets/images/whippet-good-screen.png'
 import WhereInTheWorld from '../../assets/images/WITW.png'
 import WhereInTheWorldMobile from '../../assets/images/WITW-mobile.gif'
 
 const Project = (props) => {
+  const [focusState, setFocusState] = useState(false)
   return (
     <div className="flex flex-col items-center mb-16">
       <div>
         <img
-          id="project-image"
-          className="w-full md:w-3/5 relative hover:z-10 hover:"
+          onClick={() => setFocusState(!focusState)}
+          className={`w-full md:w-3/5 relative ${
+            focusState ? 'focused' : 'non-focused'
+          }`}
           src={props.img}
           alt="props demo"
         ></img>
-        <div className="w-4/5 p-4 border bg-gray-50 relative bottom-5 md:bottom-48 md:w-3/5 md:left-1/3 m-auto md:m-0">
+        <div
+          onClick={() => setFocusState(!focusState)}
+          className={`w-4/5 p-4 border bg-gray-50 relative bottom-5 md:bottom-48 md:w-3/5 md:left-1/3 m-auto md:m-0 ${
+            focusState ? 'non-focused' : 'focused'
+          }`}
+        >
           <h1 className="text-center text-xl">{props.name}</h1>
           <p>{props.desc}</p>
           <div className="flex justify-end">

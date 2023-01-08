@@ -11,3 +11,12 @@
   -webkit-filter: none !important;
   filter: none !important;
 }
+
+.focused {
+  border: black 2px solid;
+  z-index: 10;
+}
+.non-focused {
+  -webkit-filter: brightness(0.7);
+  filter: brightness(0.7);
+}
