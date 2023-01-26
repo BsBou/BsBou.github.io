@@ -12,6 +12,7 @@ import { ReactComponent as MailSVG } from '../../assets/images/mail.svg'
 import { ReactComponent as GithubSVG } from '../../assets/images/github.svg'
 // import { ReactComponent as LinkedInSVG } from '../../assets/images/linkedin.svg'
 // import { ReactComponent as LinkedInSVG } from '../../assets/images/linkedin.svg'
+import { motion } from 'framer-motion'
 
 const About = () => {
   return (
@@ -25,30 +26,36 @@ const About = () => {
               className="text-5xl m-auto flex justify-evenly w-4/5 p-4"
               id="socials"
             >
-              <a
+              <motion.a
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 href="https://github.com/BsBou"
                 target={'_blank'}
                 rel="noreferrer"
               >
                 {/* <FontAwesomeIcon icon={faSquareGithub} /> */}
                 <GithubSVG />
-              </a>
+              </motion.a>
 
-              <a
+              <motion.a
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 href="https://www.linkedin.com/in/borhanbou/"
                 target={'_blank'}
                 rel="noreferrer"
               >
                 <LinkedInSVG />
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 href="mailto:borhan.boulandier@gmail.com"
                 target={'_blank'}
                 rel="noreferrer"
               >
                 <MailSVG />
                 {/* <FontAwesomeIcon icon={faEnvelopeSquare} /> */}
-              </a>
+              </motion.a>
             </div>
           </div>
           <span

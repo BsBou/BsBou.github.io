@@ -5,13 +5,7 @@ import { motion } from 'framer-motion'
 
 const Banner = () => {
   const handleClickScroll = () => {
-    const element = document.getElementById('about')
-
-    console.log(element)
-    if (element) {
-      // 👇 Will scroll smoothly to the top of the next section
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+    document.getElementById('about').scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
