@@ -1,5 +1,5 @@
 import './index.css'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import TraceGif from '../../assets/images/trace.gif'
 import WhippetGood from '../../assets/images/whippet-good-screen.png'
 import WhereInTheWorld from '../../assets/images/WITW.png'
@@ -18,8 +18,9 @@ const Project = (props, handleClose) => {
     : (document.body.classList = '')
 
   return (
-    <div className="flex flex-col items-center mb-16">
+    <div className="flex flex-col items-center md:items-start mb-16">
       <motion.img
+        className="md:w-2/3"
         layoutId={props.id}
         onClick={handleClick}
         src={props.img}
@@ -30,13 +31,9 @@ const Project = (props, handleClose) => {
         {selectedId && (
           <>
             <motion.img
-              style={{
-                position: 'fixed',
-                top: '38%',
-                zIndex: 2,
-                overflowY: 'hidden',
-              }}
+              className="selected-image"
               layoutId={selectedId}
+              transition={{ type: 'spring', stiffness: 100 }}
               src={props.img}
               alt="props demo"
             ></motion.img>
