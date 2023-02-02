@@ -1,8 +1,8 @@
-.body-modal {
+.body-modal-backdrop {
   overflow-y: hidden;
 }
 
-.modal-overlay {
+.modal-backdrop {
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
@@ -14,7 +14,7 @@
 
 .selected-project {
   position: fixed;
-  top: 38%;
+  top: 50%;
   z-index: 2;
   overflow-y: hidden;
 }

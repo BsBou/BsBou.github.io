@@ -1,14 +1,14 @@
-import './index.css'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper'
+import useMediaQuery from '../../hooks/useMediaQuery'
 
+import './index.css'
 import 'swiper/css'
 import 'swiper/css/bundle'
-
 import 'swiper/css/navigation'
 
 const ProjectCard = ({
@@ -20,40 +20,55 @@ const ProjectCard = ({
   desc,
   mobileImg,
 }) => {
+  // Hook to detect device size
+  const isDesktop = useMediaQuery('(min-width: 768px)')
+  const isMobile = useMediaQuery('(max-width: 640px)')
+
+  // State initializers
+  const [selectedId, setSelectedId] = useState(null)
+  const [slideSize, setSlideSize] = useState([])
+  const [activeIndex, setActiveIndex] = useState('')
+
+  // Handler functions
   const handleClick = () => {
     setSelectedId(id)
   }
+  const handleSlideChange = (event) => {
+    setActiveIndex(event.activeIndex)
+  }
 
-  const [selectedId, setSelectedId] = useState(null)
+  // Apply backdrop
+  useEffect(() => {
+    if (selectedId) {
+      document.body.classList.add('body-modal-backdrop')
+    } else {
+      document.body.classList.remove('body-modal-backdrop')
+    }
+  }, [selectedId])
 
-  const [slideWidths, setSlideWidths] = useState([])
-  const [activeIndex, setActiveIndex] = useState('')
-
+  // On initial slider load, populate slideSize state with image dimensions
   function swiperInit(event) {
-    event.imagesToLoad.forEach((element, index) => {
-      let slideObj = {
+    const imagesToLoad = event.imagesToLoad
+    const updatedSlides = imagesToLoad.reduce((prev, current, index) => {
+      const slideObj = {
         slideActiveIndex: index,
-        width: element.width,
+        width: current.width,
+        height: current.height,
       }
 
       if (
-        !slideWidths.some(
-          (el) => el['slideActiveIndex'] === slideObj.slideActiveIndex
+        !slideSize.some(
+          (el) => el.slideActiveIndex === slideObj.slideActiveIndex
         )
       ) {
-        setSlideWidths((prevSlides) => [...prevSlides, slideObj])
+        prev.push(slideObj)
       }
-    })
+      return prev
+    }, [])
+
+    setSlideSize((prevSlides) => [...prevSlides, ...updatedSlides])
     setActiveIndex(event.activeIndex)
   }
-
-  function handleSlideChange(event) {
-    setActiveIndex(event.activeIndex)
-  }
-
-  selectedId
-    ? (document.body.classList = 'body-modal')
-    : (document.body.classList = '')
 
   return (
     <div className="flex flex-col items-center md:items-start mb-16">
@@ -72,17 +87,37 @@ const ProjectCard = ({
       <AnimatePresence>
         {selectedId && (
           <>
+            {/* Resize slider div based on image dimensions */}
             <motion.div
               style={{
                 width: `${
-                  activeIndex !== ''
-                    ? `${slideWidths[activeIndex].width}px`
-                    : '74%'
+                  isDesktop
+                    ? `${
+                        activeIndex !== ''
+                          ? `${slideSize[activeIndex].width}px`
+                          : '74%'
+                      }`
+                    : '90%'
+                }`,
+                height: `${
+                  isMobile &&
+                  `${
+                    activeIndex !== ''
+                      ? `${slideSize[activeIndex].height}px`
+                      : '100%'
+                  }`
+                }`,
+                marginTop: `${
+                  isMobile &&
+                  `${
+                    activeIndex !== ''
+                      ? `-${slideSize[activeIndex].height / 2}px`
+                      : '0px'
+                  }`
                 }`,
               }}
               layoutId={selectedId}
               className="selected-project"
-              transition={{ type: 'spring', stiffness: 60 }}
             >
               <Swiper
                 onImagesReady={swiperInit}
@@ -117,8 +152,7 @@ const ProjectCard = ({
               </Swiper>
             </motion.div>
             <div
-              className="modal-overlay cursor-pointer"
-              id="modal-overlay"
+              className="modal-backdrop cursor-pointer"
               onClick={() => setSelectedId(null)}
             ></div>
           </>
