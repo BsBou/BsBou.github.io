@@ -16,6 +16,7 @@ const ProjectCard = ({
   name,
   desktopImg,
   url,
+  videoDemo,
   github,
   desc,
   mobileImg,
@@ -95,7 +96,7 @@ const ProjectCard = ({
                     ? `${
                         activeIndex !== ''
                           ? `${slideSize[activeIndex].width}px`
-                          : '74%'
+                          : '70%'
                       }`
                     : '90%'
                 }`,
@@ -168,11 +169,20 @@ const ProjectCard = ({
         <h1 className="text-center text-xl">{name}</h1>
         <p>{desc}</p>
         <div className="flex justify-end">
-          <span className="mx-4">
-            <a href={url} target="_blank" rel="noreferrer">
-              Live demo
-            </a>
-          </span>
+          {url && (
+            <span className="mx-4">
+              <a href={url} target="_blank" rel="noreferrer">
+                Live site
+              </a>
+            </span>
+          )}
+          {videoDemo && (
+            <span className="mx-4">
+              <a href={videoDemo} target="_blank" rel="noreferrer">
+                Video Demo
+              </a>
+            </span>
+          )}
           <span>
             <a href={github} target="_blank" rel="noreferrer">
               Github
