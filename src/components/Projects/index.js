@@ -40,7 +40,7 @@ const Projects = () => {
       />
       <ProjectCard
         id={nanoid()}
-        name="Find (Developed for Hack for Peace Hackathon)"
+        name="Find (Hack for Peace Hackathon)"
         desktopImg={findDesktop}
         mobileImg={findMobile}
         github="https://github.com/BsBou/hack-for-peace"

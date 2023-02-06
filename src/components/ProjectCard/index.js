@@ -74,7 +74,7 @@ const ProjectCard = ({
   }
 
   return (
-    <div className="flex flex-col items-center md:items-start">
+    <div className="flex flex-col items-center md:items-start md:h-[80vh]">
       <motion.div
         layoutId={id}
         whileHover={{
@@ -84,7 +84,11 @@ const ProjectCard = ({
         className="md:w-2/3 cursor-pointer"
         onClick={handleClick}
       >
-        <motion.img src={desktopImg} alt="demo"></motion.img>
+        <motion.img
+          src={desktopImg}
+          alt="demo"
+          className="filter grayscale-[50%]"
+        ></motion.img>
       </motion.div>
 
       <AnimatePresence>
@@ -166,33 +170,45 @@ const ProjectCard = ({
         whileInView={{ y: [0, -70, -50] }}
         viewport={{ once: true }}
         transition={{ type: 'spring', duration: 0.8, bounce: 1 }}
-        className={`w-4/5 p-4 border bg-gray-50 relative bottom-5 md:bottom-48 md:w-3/5 md:left-1/3 m-auto md:m-0 `}
+        className="relative bottom-5 md:bottom-48  md:left-1/3 w-4/5 md:w-3/5"
       >
-        <h1 className="text-center text-xl">{name}</h1>
-        <p className="my-3">{desc}</p>
-        <div className="flex justify-end">
-          {url && (
+        <div>
+          <h1
+            className="text-center text-xl font-semibold p-3"
+            id="project-card-name"
+          >
+            {name}
+          </h1>
+        </div>
+        <div className={` p-4 border bg-gray-50 m-auto md:m-0 `}>
+          <p className="my-3">{desc}</p>
+          <div className="flex justify-end">
+            {url && (
+              <motion.span className="mx-4" whileHover={{ scale: 0.95 }}>
+                <a href={url} target="_blank" rel="noreferrer">
+                  Live site
+                  <FontAwesomeIcon
+                    className="ml-2"
+                    icon={faUpRightFromSquare}
+                  />
+                </a>
+              </motion.span>
+            )}
+            {videoDemo && (
+              <motion.span className="mx-4" whileHover={{ scale: 0.95 }}>
+                <a href={videoDemo} target="_blank" rel="noreferrer">
+                  Video Demo
+                  <FontAwesomeIcon className="ml-2" icon={faVideo} />
+                </a>
+              </motion.span>
+            )}
             <motion.span className="mx-4" whileHover={{ scale: 0.95 }}>
-              <a href={url} target="_blank" rel="noreferrer">
-                Live site
+              <a href={github} target="_blank" rel="noreferrer">
+                Github
                 <FontAwesomeIcon className="ml-2" icon={faUpRightFromSquare} />
               </a>
             </motion.span>
-          )}
-          {videoDemo && (
-            <motion.span className="mx-4" whileHover={{ scale: 0.95 }}>
-              <a href={videoDemo} target="_blank" rel="noreferrer">
-                Video Demo
-                <FontAwesomeIcon className="ml-2" icon={faVideo} />
-              </a>
-            </motion.span>
-          )}
-          <motion.span className="mx-4" whileHover={{ scale: 0.95 }}>
-            <a href={github} target="_blank" rel="noreferrer">
-              Github
-              <FontAwesomeIcon className="ml-2" icon={faUpRightFromSquare} />
-            </a>
-          </motion.span>
+          </div>
         </div>
       </motion.div>
     </div>
