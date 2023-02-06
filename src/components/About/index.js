@@ -1,17 +1,11 @@
 import './index.css'
 import Profile from '../../assets/images/Borhan.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faEnvelopeSquare,
-  faLocationDot,
-} from '@fortawesome/free-solid-svg-icons'
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import Stack from '../Stack'
-import { faLinkedin, faSquareGithub } from '@fortawesome/free-brands-svg-icons'
 import { ReactComponent as LinkedInSVG } from '../../assets/images/linkedin.svg'
 import { ReactComponent as MailSVG } from '../../assets/images/mail.svg'
 import { ReactComponent as GithubSVG } from '../../assets/images/github.svg'
-// import { ReactComponent as LinkedInSVG } from '../../assets/images/linkedin.svg'
-// import { ReactComponent as LinkedInSVG } from '../../assets/images/linkedin.svg'
 import { motion } from 'framer-motion'
 
 const About = () => {
@@ -33,7 +27,6 @@ const About = () => {
                 target={'_blank'}
                 rel="noreferrer"
               >
-                {/* <FontAwesomeIcon icon={faSquareGithub} /> */}
                 <GithubSVG />
               </motion.a>
 
@@ -54,7 +47,6 @@ const About = () => {
                 rel="noreferrer"
               >
                 <MailSVG />
-                {/* <FontAwesomeIcon icon={faEnvelopeSquare} /> */}
               </motion.a>
             </div>
           </div>

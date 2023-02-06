@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+import { faVideo } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper'
@@ -72,12 +74,12 @@ const ProjectCard = ({
   }
 
   return (
-    <div className="flex flex-col items-center md:items-start mb-16">
+    <div className="flex flex-col items-center md:items-start">
       <motion.div
         layoutId={id}
         whileHover={{
           scale: 0.98,
-          transition: { duration: 0.3 },
+          transition: { duration: 0.1 },
         }}
         className="md:w-2/3 cursor-pointer"
         onClick={handleClick}
@@ -167,27 +169,30 @@ const ProjectCard = ({
         className={`w-4/5 p-4 border bg-gray-50 relative bottom-5 md:bottom-48 md:w-3/5 md:left-1/3 m-auto md:m-0 `}
       >
         <h1 className="text-center text-xl">{name}</h1>
-        <p>{desc}</p>
+        <p className="my-3">{desc}</p>
         <div className="flex justify-end">
           {url && (
-            <span className="mx-4">
+            <motion.span className="mx-4" whileHover={{ scale: 0.95 }}>
               <a href={url} target="_blank" rel="noreferrer">
                 Live site
+                <FontAwesomeIcon className="ml-2" icon={faUpRightFromSquare} />
               </a>
-            </span>
+            </motion.span>
           )}
           {videoDemo && (
-            <span className="mx-4">
+            <motion.span className="mx-4" whileHover={{ scale: 0.95 }}>
               <a href={videoDemo} target="_blank" rel="noreferrer">
                 Video Demo
+                <FontAwesomeIcon className="ml-2" icon={faVideo} />
               </a>
-            </span>
+            </motion.span>
           )}
-          <span>
+          <motion.span className="mx-4" whileHover={{ scale: 0.95 }}>
             <a href={github} target="_blank" rel="noreferrer">
               Github
+              <FontAwesomeIcon className="ml-2" icon={faUpRightFromSquare} />
             </a>
-          </span>
+          </motion.span>
         </div>
       </motion.div>
     </div>
