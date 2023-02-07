@@ -6,6 +6,7 @@ import { nanoid } from 'nanoid'
 import TraceGif from '../../assets/images/trace.gif'
 import TraceMobileGif from '../../assets/images/TraceMobile.gif'
 import WhippetGood from '../../assets/images/whippet-good-screen.png'
+import WhippetGoodGif from '../../assets/images/whippetGoodGif.gif'
 import WhereInTheWorld from '../../assets/images/WITW.png'
 import WhereInTheWorldMobile from '../../assets/images/WITW-mobile.gif'
 import findDesktop from '../../assets/images/findDesktop.png'
@@ -19,39 +20,42 @@ const Projects = () => {
       <ProjectCard
         id={nanoid()}
         name="Trace"
-        desktopImg={TraceGif}
+        desktopImg={[TraceGif]}
         mobileImg={TraceMobileGif}
         videoDemo={
           'https://www.youtube.com/watch?v=X2IFL4Ev69c&list=PLkbmdtbypn7TaaSLn0twxAxZ1FIiu6PIS&index=4'
         }
         github="https://github.com/BsBou/trace"
-        desc="Merging the digital and real-world experience through scavenger hunt games. Trace allows users to create custom challenges, plotted on a map. Players then race against the clock in teams, adding points to a leaderboard.
-        Developed two users flows (desktop for admins and mobile for players) with two team members using Ruby on Rails, Stimulus, HTML, CSS, JS, Mapbox API and OpenWeather API"
+        desc={`<strong>Merging the digital and real-world experience through scavenger hunt games.</strong> \n Trace allows users to create custom challenges, plotted on a map. \nPlayers then race against the clock in teams, adding points to a leaderboard.
+        Developed two users flows (desktop for admins and mobile for players) with two team members using Ruby on Rails, Stimulus, HTML, CSS, JS, Mapbox API and OpenWeather API`}
       />
 
       <ProjectCard
         id={nanoid()}
-        name="Where in the World?"
-        desktopImg={WhereInTheWorld}
-        mobileImg={WhereInTheWorldMobile}
-        url="https://bsbou.github.io/where-in-the-world-/"
-        github="https://github.com/BsBou/where-in-the-world-"
-        desc="Lorem ipsum dolor sit amet, consectetur adipiscing el  it, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        name="Find (Hack for Peace Hackathon)"
+        desktopImg={[findDesktop]}
+        mobileImg={findMobile}
+        github="https://github.com/BsBou/hack-for-peace"
+        desc={`Find enables users to locate their missing loved ones by uploading a picture, which then gets compared to a hospital database of unidentified patients, leveraging a facial recognition API.\n Find was developed alongside 3 team members over 2 days at Hack for Peace, a Cross-European Hackathon where over 200 developers and entrepeneurs came together to build anti-war tech products.\n<strong>Our team made it to the finals, coming in 6th place overall</strong>`}
       />
       <ProjectCard
         id={nanoid()}
-        name="Find (Hack for Peace Hackathon)"
-        desktopImg={findDesktop}
-        mobileImg={findMobile}
-        github="https://github.com/BsBou/hack-for-peace"
-        desc="Lorem ipsum dolor sit amet, consectetur adipiscing el  it, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        name="Where in the World?"
+        desktopImg={[WhereInTheWorld]}
+        mobileImg={WhereInTheWorldMobile}
+        url="https://bsbou.github.io/where-in-the-world-/"
+        github="https://github.com/BsBou/where-in-the-world-"
+        desc={`<strong>Discover the world, learn new facts about countries</strong> \nA mobile first web app based on REST countries API, built using vanilla JavaScript, SCSS and HTML
+        Features: Dark Mode, Search
+        `}
       />
       <ProjectCard
         id={nanoid()}
         name="Whippet Good"
-        desktopImg={WhippetGood}
+        desktopImg={[WhippetGood, WhippetGoodGif]}
         github="https://github.com/BsBou/whippet-good"
-        desc="Lorem ipsum dolor sit amet, consectetur adipiscing el  it, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        desc={`An AirBnB clone where you can rent... <strong>Dogs!</strong>
+        \n Built with Ruby on Rails, Stimulus JS and SCSS`}
       />
     </section>
   )

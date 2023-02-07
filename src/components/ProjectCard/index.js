@@ -73,6 +73,26 @@ const ProjectCard = ({
     setActiveIndex(event.activeIndex)
   }
 
+  function replaceMarkup(text) {
+    return text
+      .replace(/\n/g, '<br />')
+      .replace(/<strong>/g, '<strong>')
+      .replace(/<\/strong>/g, '</strong>')
+  }
+
+  const slides = desktopImg.map((image, index) => (
+    <SwiperSlide key={index}>
+      <motion.img src={image} alt="demo"></motion.img>
+      <motion.button
+        whileHover={{ rotate: -15, scale: 1.1 }}
+        className="absolute top-2 right-4 md:right-8"
+        onClick={() => setSelectedId(null)}
+      >
+        <FontAwesomeIcon icon={faXmark} className="text-5xl" />
+      </motion.button>
+    </SwiperSlide>
+  ))
+
   return (
     <div className="flex flex-col items-center md:items-start md:h-[80vh]">
       <motion.div
@@ -85,7 +105,7 @@ const ProjectCard = ({
         onClick={handleClick}
       >
         <motion.img
-          src={desktopImg}
+          src={desktopImg[0]}
           alt="demo"
           className="filter grayscale-[50%]"
         ></motion.img>
@@ -133,16 +153,7 @@ const ProjectCard = ({
                 modules={[Navigation]}
                 navigation={true}
               >
-                <SwiperSlide>
-                  <motion.img src={desktopImg} alt="demo"></motion.img>
-                  <motion.button
-                    whileHover={{ rotate: -15, scale: 1.1 }}
-                    className="absolute top-2 right-4 md:right-8"
-                    onClick={() => setSelectedId(null)}
-                  >
-                    <FontAwesomeIcon icon={faXmark} className="text-5xl" />
-                  </motion.button>
-                </SwiperSlide>
+                {slides}
 
                 {mobileImg && (
                   <SwiperSlide>
@@ -181,7 +192,11 @@ const ProjectCard = ({
           </h1>
         </div>
         <div className={` p-4 border bg-gray-50 m-auto md:m-0 `}>
-          <p className="my-3">{desc}</p>
+          <p
+            className="my-3"
+            dangerouslySetInnerHTML={{ __html: replaceMarkup(desc) }}
+          />
+
           <div className="flex justify-end">
             {url && (
               <motion.span className="mx-4" whileHover={{ scale: 0.95 }}>
