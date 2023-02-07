@@ -137,7 +137,7 @@ const ProjectCard = ({
                   <motion.img src={desktopImg} alt="demo"></motion.img>
                   <motion.button
                     whileHover={{ rotate: -15, scale: 1.1 }}
-                    className="absolute top-2 right-8"
+                    className="absolute top-2 right-4 md:right-8"
                     onClick={() => setSelectedId(null)}
                   >
                     <FontAwesomeIcon icon={faXmark} className="text-5xl" />
