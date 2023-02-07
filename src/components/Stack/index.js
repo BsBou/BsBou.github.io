@@ -27,24 +27,23 @@ const Stack = () => {
 
   const skillItems = skills.map((skill) => (
     <SwiperSlide key={skill.skill}>
-      <div className="flex flex-col justify-evenly items-center  w-24 h-28 border border-black text-6xl active">
+      <div className="flex flex-col justify-evenly items-center h-24 w-24 md:h-32 md:w-32 border border-black text-6xl active mx-auto">
         <i className={skill.icon}></i>
-        <p className="text-base">{skill.skill}</p>
+        <p className="text-sm md:text-base">{skill.skill}</p>
       </div>
     </SwiperSlide>
   ))
 
   return (
-    <div className="flex flex-col items-center py-4">
+    <div className="flex flex-col items-center py-4 md:w-[80vw] w-full">
       <h2 className="text-3xl py-4">Tech Stack</h2>
       <div className="stack-slider w-full h-full">
         {
           <Swiper
             modules={[Autoplay, Navigation, Pagination]}
-            // spaceBetween={10}
             slidesPerView={3}
             centeredSlides={true}
-            breakpoints={{ 600: { slidesPerView: 8 } }}
+            breakpoints={{ 600: { slidesPerView: 7 } }}
             loop={true}
             autoplay={{ delay: 2000, disableOnInteraction: false }}
             fadeEffect={{ crossFade: true }}

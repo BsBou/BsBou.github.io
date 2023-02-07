@@ -9,12 +9,3 @@
   opacity: 0.3;
   transition: 500ms;
 }
-
-.stack-slider {
-  transform: translateX(10px);
-}
-@media only screen and (min-width: 600px) {
-  .stack-slider {
-    transform: translateX(30px);
-  }
-}

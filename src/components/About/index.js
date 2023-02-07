@@ -10,8 +10,8 @@ import { motion } from 'framer-motion'
 
 const About = () => {
   return (
-    <section id="about" className="flex flex-col ">
-      <h1 className="text-5xl p-4 font-medium">About</h1>
+    <section id="about" className="flex flex-col items-center">
+      <h1 className="text-5xl p-4 font-medium items-start">About</h1>
       <div className="flex flex-col sm:flex-row flex-grow">
         <div className="profile-body flex flex-col justify-center basis-1/3 items-center py-4">
           <div className=" my-0 mx-auto text-center">
