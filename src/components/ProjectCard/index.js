@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper'
 import useMediaQuery from '../../hooks/useMediaQuery'
+import TechPill from '../TechPill'
 
 import './index.css'
 import 'swiper/css'
@@ -22,6 +23,7 @@ const ProjectCard = ({
   github,
   desc,
   mobileImg,
+  stack,
 }) => {
   // Hook to detect device size
   const isDesktop = useMediaQuery('(min-width: 768px)')
@@ -92,6 +94,8 @@ const ProjectCard = ({
       </motion.button>
     </SwiperSlide>
   ))
+
+  const stackPills = stack.map((name) => <TechPill name={name} />)
 
   return (
     <div className="flex flex-col items-center md:items-start md:h-[80vh]">
@@ -196,10 +200,13 @@ const ProjectCard = ({
             className="my-3"
             dangerouslySetInnerHTML={{ __html: replaceMarkup(desc) }}
           />
-
-          <div className="flex justify-end">
+          <div className="flex flex-wrap">{stackPills}</div>
+          <div className="flex justify-end flex-wrap">
             {url && (
-              <motion.span className="mx-4" whileHover={{ scale: 0.95 }}>
+              <motion.span
+                className="mx-4 mt-2 md:mt-0"
+                whileHover={{ scale: 0.95 }}
+              >
                 <a href={url} target="_blank" rel="noreferrer">
                   Live site
                   <FontAwesomeIcon
@@ -210,14 +217,20 @@ const ProjectCard = ({
               </motion.span>
             )}
             {videoDemo && (
-              <motion.span className="mx-4" whileHover={{ scale: 0.95 }}>
+              <motion.span
+                className="mx-4 mt-2 md:mt-0"
+                whileHover={{ scale: 0.95 }}
+              >
                 <a href={videoDemo} target="_blank" rel="noreferrer">
                   Video Demo
                   <FontAwesomeIcon className="ml-2" icon={faVideo} />
                 </a>
               </motion.span>
             )}
-            <motion.span className="mx-4" whileHover={{ scale: 0.95 }}>
+            <motion.span
+              className="mx-4 mt-2 md:mt-0"
+              whileHover={{ scale: 0.95 }}
+            >
               <a href={github} target="_blank" rel="noreferrer">
                 Github
                 <FontAwesomeIcon className="ml-2" icon={faUpRightFromSquare} />
