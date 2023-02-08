@@ -131,7 +131,7 @@ const ProjectCard = ({
                   `${
                     activeIndex !== ''
                       ? `${slideSize[activeIndex].height}px`
-                      : '100%'
+                      : '25vh'
                   }`
                 }`,
                 marginTop: `${

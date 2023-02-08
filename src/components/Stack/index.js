@@ -11,6 +11,7 @@ const Stack = () => {
   const skills = [
     { skill: 'React', icon: 'devicon-devicon-plain' },
     { skill: 'Rails', icon: 'devicon-rails-plain-wordmark' },
+    { skill: 'Rspec', icon: 'devicon-rspec-original' },
     {
       skill: 'PostgreSQL',
       icon: 'devicon-postgresql-plain-wordmark',
