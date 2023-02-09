@@ -1,7 +1,7 @@
 {
   "name": "borhan-react-portfolio",
   "version": "0.1.0",
-  "homepage": "https://BsBou.github.io",
+  "homepage": "https://borhan.dev",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
