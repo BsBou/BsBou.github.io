@@ -124,7 +124,7 @@ const ProjectCard = ({
                 width: `${
                   isDesktop
                     ? `${
-                        activeIndex !== ''
+                        slideSize && activeIndex !== ''
                           ? `${slideSize[activeIndex].width}px`
                           : '70%'
                       }`
