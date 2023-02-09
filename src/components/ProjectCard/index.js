@@ -124,7 +124,7 @@ const ProjectCard = ({
                 width: `${
                   isDesktop
                     ? `${
-                        slideSize && activeIndex !== ''
+                        slideSize.length > 1 && activeIndex !== ''
                           ? `${slideSize[activeIndex].width}px`
                           : '70%'
                       }`
@@ -133,7 +133,7 @@ const ProjectCard = ({
                 height: `${
                   isMobile &&
                   `${
-                    activeIndex !== ''
+                    slideSize.length > 1 && activeIndex !== ''
                       ? `${slideSize[activeIndex].height}px`
                       : '25vh'
                   }`
