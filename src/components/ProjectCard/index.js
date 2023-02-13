@@ -17,26 +17,22 @@ import 'swiper/css/navigation'
 const ProjectCard = ({
   id,
   name,
-  desktopImg,
+  images,
   url,
   videoDemo,
   github,
   desc,
-  mobileImg,
   stack,
 }) => {
-  // Hook to detect device size
-  const isDesktop = useMediaQuery('(min-width: 768px)')
-  const isMobile = useMediaQuery('(max-width: 640px)')
-
   // State initializers
   const [selectedId, setSelectedId] = useState(null)
-  const [slideSize, setSlideSize] = useState([])
   const [activeIndex, setActiveIndex] = useState('')
+  const [projectImages, setProjectImages] = useState([])
 
   // Handler functions
   const handleClick = () => {
     setSelectedId(id)
+    setActiveIndex(0)
   }
   const handleSlideChange = (event) => {
     setActiveIndex(event.activeIndex)
@@ -51,30 +47,12 @@ const ProjectCard = ({
     }
   }, [selectedId])
 
-  // On initial slider load, populate slideSize state with image dimensions
-  function swiperInit(event) {
-    const imagesToLoad = event.imagesToLoad
-    const updatedSlides = imagesToLoad.reduce((prev, current, index) => {
-      const slideObj = {
-        slideActiveIndex: index,
-        width: current.width,
-        height: current.height,
-      }
+  useEffect(() => {
+    const imgs_arr = images.map((value) => ({ mobile: value.mobile }))
+    setProjectImages(imgs_arr)
+  }, [images])
 
-      if (
-        !slideSize.some(
-          (el) => el.slideActiveIndex === slideObj.slideActiveIndex
-        )
-      ) {
-        prev.push(slideObj)
-      }
-      return prev
-    }, [])
-
-    setSlideSize((prevSlides) => [...prevSlides, ...updatedSlides])
-    setActiveIndex(event.activeIndex)
-  }
-
+  // Allow newline, strong tags in paragraphs
   function replaceMarkup(text) {
     return text
       .replace(/\n/g, '<br />')
@@ -82,12 +60,17 @@ const ProjectCard = ({
       .replace(/<\/strong>/g, '</strong>')
   }
 
-  const slides = desktopImg.map((image, index) => (
+  // Map over images, create slides distinguishing mobile or not
+  const slides = images.map((value, index) => (
     <SwiperSlide key={index}>
-      <motion.img src={image} alt="demo"></motion.img>
+      <motion.img src={value.img} alt="demo"></motion.img>
       <motion.button
         whileHover={{ rotate: -15, scale: 1.1 }}
-        className="absolute top-2 right-4 md:right-8"
+        className={`${
+          value.mobile
+            ? 'absolute top-2 right-4'
+            : 'absolute top-2 right-4 md:right-8'
+        }`}
         onClick={() => setSelectedId(null)}
       >
         <FontAwesomeIcon icon={faXmark} className="text-5xl" />
@@ -109,7 +92,7 @@ const ProjectCard = ({
         onClick={handleClick}
       >
         <motion.img
-          src={desktopImg[0]}
+          src={images[0].img}
           alt="demo"
           className="filter grayscale-[50%]"
         ></motion.img>
@@ -118,59 +101,21 @@ const ProjectCard = ({
       <AnimatePresence>
         {selectedId && (
           <>
-            {/* Resize slider div based on image dimensions */}
             <motion.div
-              style={{
-                width: `${
-                  isDesktop
-                    ? `${
-                        slideSize.length > 1 && activeIndex !== ''
-                          ? `${slideSize[activeIndex].width}px`
-                          : '70%'
-                      }`
-                    : '90%'
-                }`,
-                height: `${
-                  isMobile &&
-                  `${
-                    slideSize.length > 1 && activeIndex !== ''
-                      ? `${slideSize[activeIndex].height}px`
-                      : '25vh'
-                  }`
-                }`,
-                marginTop: `${
-                  isMobile &&
-                  `${
-                    activeIndex !== ''
-                      ? `-${slideSize[activeIndex].height / 2}px`
-                      : '0px'
-                  }`
-                }`,
-              }}
               layoutId={selectedId}
-              className="selected-project"
+              className={`${
+                projectImages[activeIndex].mobile
+                  ? 'selected-project mobile-project'
+                  : 'selected-project'
+              }`}
             >
               <Swiper
-                onImagesReady={swiperInit}
                 onSlideChange={handleSlideChange}
                 className="my-swiper"
                 modules={[Navigation]}
                 navigation={true}
               >
                 {slides}
-
-                {mobileImg && (
-                  <SwiperSlide>
-                    <motion.img src={mobileImg} alt="demo"></motion.img>
-                    <motion.button
-                      whileHover={{ rotate: -15, scale: 1.1 }}
-                      className="absolute top-2 right-4"
-                      onClick={() => setSelectedId(null)}
-                    >
-                      <FontAwesomeIcon icon={faXmark} className="text-5xl" />
-                    </motion.button>
-                  </SwiperSlide>
-                )}
               </Swiper>
             </motion.div>
             <div

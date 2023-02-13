@@ -12,33 +12,6 @@
   height: 100%;
 }
 
-.selected-project {
-  position: fixed;
-  top: 50%;
-  z-index: 2;
-  overflow-y: hidden;
-}
-
-@media (min-width: 1250px) {
-  .selected-project {
-    /* padding-right: 15px; */
-    position: fixed;
-    z-index: 2;
-    overflow-y: hidden;
-    top: 50%;
-    left: 0px;
-    right: 0px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -40vh;
-    width: 74%;
-  }
-
-  .selected-project img {
-    height: 80vh;
-  }
-}
-
 #project-card-name {
   background-color: antiquewhite;
   border-radius: 24px 24px 0px 0px;
@@ -59,4 +32,48 @@
 
 .swiper-button-prev {
   left: 2px !important;
+}
+
+.selected-project {
+  position: fixed;
+  top: 50%;
+  z-index: 2;
+  overflow-y: hidden;
+}
+
+@media (min-width: 640px) {
+  .selected-project {
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -40vh;
+    width: 70%;
+  }
+
+  .selected-project img {
+    height: 80vh;
+
+    width: 100%;
+  }
+}
+.mobile-project {
+  width: 22vw;
+}
+
+@media (max-width: 640px) {
+  .selected-project {
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -12vh;
+    height: 24vh;
+    width: 100%;
+  }
+  .mobile-project {
+    width: 96vw;
+    height: 80vh;
+    margin-top: -40vh;
+  }
 }
