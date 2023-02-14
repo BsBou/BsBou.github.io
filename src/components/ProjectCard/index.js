@@ -76,7 +76,9 @@ const ProjectCard = ({
   const mobileImageOrNot = images.map((value) => ({ mobile: value.mobile }))
 
   // Map TechPill components
-  const stackPills = stack.map((name) => <TechPill name={name} />)
+  const stackPills = stack.map((name, index) => (
+    <TechPill key={index} name={name} />
+  ))
 
   return (
     <div className="flex flex-col items-center md:items-start md:h-[80vh]">
