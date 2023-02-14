@@ -36,53 +36,42 @@
 
 .selected-project {
   position: fixed;
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
   top: 50%;
   z-index: 2;
   overflow-y: hidden;
 }
 
+.selected-project img {
+  height: 100%;
+  width: 100%;
+}
+
 @media (min-width: 640px) {
   .selected-project {
-    left: 0px;
-    right: 0px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -40vh;
-    width: 70%;
+    width: 70vw;
+    height: calc((9 / 16) * 70vw);
+    margin-top: calc(0px - ((9 / 16) * 35vw));
   }
-
-  .selected-project img {
-    height: 80vh;
-
-    width: 100%;
+  .mobile-project {
+    height: 88vh;
+    margin-top: -44vh;
+    width: calc((6 / 13) * 88vh);
   }
-}
-.mobile-project {
-  width: 22vw;
 }
 
 @media (max-width: 640px) {
   .selected-project {
-    left: 0px;
-    right: 0px;
-    margin-left: auto;
-    margin-right: auto;
     width: 90vw;
     height: calc((9 / 16) * 90vw);
-    margin-top: calc(0px - ((9 / 16) * 90vw) / 2);
-  }
-
-  .selected-project img {
-    height: 100%;
-    width: 100%;
+    margin-top: calc(0px - ((9 / 16) * 45vw));
   }
   .mobile-project {
     width: 80vw;
     height: calc((13 / 6) * 80vw);
     margin-top: calc(0px - (13 / 6) * 40vw);
-  }
-  .mobile-project img {
-    width: 100% !important;
-    height: auto !important;
   }
 }
