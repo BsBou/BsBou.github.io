@@ -27,15 +27,22 @@ const ProjectCard = ({
   // State initializers
   const [selectedId, setSelectedId] = useState(null)
   const [activeIndex, setActiveIndex] = useState('')
-  const [projectImages, setProjectImages] = useState([])
 
   // Handler functions
-  const handleClick = () => {
+  function handleClick() {
     setSelectedId(id)
     setActiveIndex(0)
   }
-  const handleSlideChange = (event) => {
+  function handleSlideChange(event) {
     setActiveIndex(event.activeIndex)
+  }
+
+  // Allow newline, strong tags in paragraphs
+  function replaceMarkup(text) {
+    return text
+      .replace(/\n/g, '<br />')
+      .replace(/<strong>/g, '<strong>')
+      .replace(/<\/strong>/g, '</strong>')
   }
 
   // Apply backdrop
@@ -46,19 +53,6 @@ const ProjectCard = ({
       document.body.classList.remove('body-modal-backdrop')
     }
   }, [selectedId])
-
-  useEffect(() => {
-    const imgs_arr = images.map((value) => ({ mobile: value.mobile }))
-    setProjectImages(imgs_arr)
-  }, [images])
-
-  // Allow newline, strong tags in paragraphs
-  function replaceMarkup(text) {
-    return text
-      .replace(/\n/g, '<br />')
-      .replace(/<strong>/g, '<strong>')
-      .replace(/<\/strong>/g, '</strong>')
-  }
 
   // Map over images, create slides distinguishing mobile or not
   const slides = images.map((value, index) => (
@@ -78,6 +72,10 @@ const ProjectCard = ({
     </SwiperSlide>
   ))
 
+  // Store boolean, demo image mobile or not
+  const mobileImageOrNot = images.map((value) => ({ mobile: value.mobile }))
+
+  // Map TechPill components
   const stackPills = stack.map((name) => <TechPill name={name} />)
 
   return (
@@ -104,7 +102,7 @@ const ProjectCard = ({
             <motion.div
               layoutId={selectedId}
               className={`${
-                projectImages[activeIndex].mobile
+                mobileImageOrNot[activeIndex].mobile
                   ? 'selected-project mobile-project'
                   : 'selected-project'
               }`}
