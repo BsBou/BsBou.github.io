@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.c4413889.css",
-    "main.js": "/static/js/main.26071905.js",
+    "main.css": "/static/css/main.6cca49d9.css",
+    "main.js": "/static/js/main.f440c260.js",
     "static/js/787.5129302f.chunk.js": "/static/js/787.5129302f.chunk.js",
     "static/media/trace.gif": "/static/media/trace.0e510a90271fe72e9b18.gif",
-    "static/media/WITW-mobile.gif": "/static/media/WITW-mobile.905597a958b78a65bcb2.gif",
     "static/media/whippetGoodGif.gif": "/static/media/whippetGoodGif.95487393da67c22ad078.gif",
     "static/media/findMobile.gif": "/static/media/findMobile.78b83d9bd2f5ae4adc67.gif",
     "static/media/TraceMobile.gif": "/static/media/TraceMobile.dffaa4d6defa3594d856.gif",
+    "static/media/WITW-mobile.gif": "/static/media/WITW-mobile.977b79383937545d1dc3.gif",
     "static/media/whippet-good-screen.png": "/static/media/whippet-good-screen.f4ed781776615c80bb6b.png",
     "static/media/Borhan.jpg": "/static/media/Borhan.61705973873263b20fb2.jpg",
     "static/media/WITW.png": "/static/media/WITW.b808236a5314a91ca71e.png",
@@ -16,12 +16,12 @@
     "static/media/github.svg": "/static/media/github.e7ab8675a2cbadea548cafe724065b9e.svg",
     "static/media/linkedin.svg": "/static/media/linkedin.9e52cf326e0bbf3cd9a3378906c0d35c.svg",
     "static/media/mail.svg": "/static/media/mail.eee1baa73917a6ad8cc5ab655510875a.svg",
-    "main.c4413889.css.map": "/static/css/main.c4413889.css.map",
-    "main.26071905.js.map": "/static/js/main.26071905.js.map",
+    "main.6cca49d9.css.map": "/static/css/main.6cca49d9.css.map",
+    "main.f440c260.js.map": "/static/js/main.f440c260.js.map",
     "787.5129302f.chunk.js.map": "/static/js/787.5129302f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c4413889.css",
-    "static/js/main.26071905.js"
+    "static/css/main.6cca49d9.css",
+    "static/js/main.f440c260.js"
   ]
 }
