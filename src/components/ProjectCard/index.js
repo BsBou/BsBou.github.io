@@ -6,7 +6,6 @@ import { faVideo } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper'
-import useMediaQuery from '../../hooks/useMediaQuery'
 import TechPill from '../TechPill'
 
 import './index.css'
