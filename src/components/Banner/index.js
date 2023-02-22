@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import Particles from 'react-tsparticles'
 import { loadFull } from 'tsparticles'
 import particlesConfig from '../../config/particlesConfig'
+import Typed from 'react-typed'
 
 const Banner = () => {
   const handleClickScroll = () => {
@@ -27,11 +28,12 @@ const Banner = () => {
             {' '}
             Borhan Boulandier
           </h1>
-          <div className="w-fit mx-auto">
-            <h1 className="text-5xl text-center font-light typed-out">
-              Full-stack developer
-            </h1>
-          </div>
+          <Typed
+            strings={['Full Stack developer']}
+            wrapper="div"
+            typeSpeed={40}
+            className={['text-5xl text-center font-light mx-auto w-[70%]']}
+          />
         </div>
         <div className=" flex flex-col h-1/5">
           <h2 className="text-3xl text-center pb-4">See more</h2>
