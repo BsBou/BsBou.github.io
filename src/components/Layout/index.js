@@ -10,6 +10,7 @@ const Layout = () => {
       <About />
       <Projects />
       <Contact />
+      <p className="text-center mb-4">© Copyright 2023, Borhan Boulandier</p>
     </div>
   )
 }

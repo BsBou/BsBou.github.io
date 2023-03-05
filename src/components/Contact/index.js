@@ -54,9 +54,11 @@ const Contact = () => {
       .catch((error) => console.error(error))
   }
   return (
-    <section
-      className="mb-32 text-center text-gray-800 bg-[#02044A]  rounded-2xl"
-      id="contact"
+    <motion.section
+      initial={{ marginInline: '0' }}
+      whileInView={{ marginInline: '6vw' }}
+      transition={{ delay: 0.5 }}
+      className="mb-12 md:mb-20 text-center text-gray-800 bg-[#02044A]  rounded-2xl"
     >
       <div className="flex flex-col md:flex-row p-8 md:p-16">
         <div className="md:w-3/5 text-gray-100 flex flex-col">
@@ -223,7 +225,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 
