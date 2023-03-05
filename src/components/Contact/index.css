@@ -1,16 +1,16 @@
 #contact {
-  padding-inline: 6vw;
+  margin-inline: 6vw;
 }
 
 .contact-socials {
-  width: 2rem;
-  height: 2rem;
-  margin: 2rem 1rem 0rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 1rem;
 }
 @media (min-width: 1250px) {
   .contact-socials {
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
     margin: 1rem 0rem;
   }
 }

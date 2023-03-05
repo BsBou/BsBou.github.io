@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react'
 import { sendForm } from 'emailjs-com'
 import { motion } from 'framer-motion'
 import { ReactComponent as LinkedInSVG } from '../../assets/images/linkedin.svg'
-import { ReactComponent as MailSVG } from '../../assets/images/mail.svg'
 import { ReactComponent as GithubSVG } from '../../assets/images/github.svg'
+import { ReactComponent as MailSVG } from '../../assets/images/mail.svg'
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 
 import './index.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const Contact = () => {
   const YOUR_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE
   const YOUR_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE
@@ -52,49 +54,65 @@ const Contact = () => {
       .catch((error) => console.error(error))
   }
   return (
-    <section className="mb-32 text-center text-gray-800" id="contact">
-      <h1 className="text-5xl p-4 font-medium text-center md:text-left">
-        Let's get in touch!
-      </h1>
-      <div className="flex flex-col md:flex-row">
-        <div className="md:w-4/12 md:pt-8 md:mb-6">
-          <h4 className="h-3/6 flex items-center">
+    <section
+      className="mb-32 text-center text-gray-800 bg-[#02044A]  rounded-2xl"
+      id="contact"
+    >
+      <div className="flex flex-col md:flex-row p-8 md:p-16">
+        <div className="md:w-3/5 text-gray-100 flex flex-col">
+          <h1 className="text-5xl md:p-4 mb-4 font-medium text-center md:text-left">
+            Let's work together!
+          </h1>
+          <h4 className="text-left text-gray-500 md:pl-4 px-2 md:w-3/5 mb-4">
             <i>
               Always happy to chat, feel free to send a message and I will get
-              back to you!
+              back to you soon!
             </i>
           </h4>
-          <div className="h-3/6">
-            <span className="flex px-3 justify-evenly">
-              <motion.a
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                href="https://github.com/BsBou"
-                target={'_blank'}
-                rel="noreferrer"
-              >
-                <GithubSVG className="contact-socials" />
-              </motion.a>
-
-              <motion.a
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                href="https://www.linkedin.com/in/borhanbou/"
-                target={'_blank'}
-                rel="noreferrer"
-              >
-                <LinkedInSVG className="contact-socials" />
-              </motion.a>
-            </span>
-            <a href="mailto:borhan.boulandier@gmail.com">
+          <div className="flex-grow flex flex-col justify-evenly md:ml-6">
+            <div className="text-sm md:text-base text-left hover:border-[#0C75FF] hover:border-2 hover:bg-[#030D58] md:w-1/2 rounded-xl flex items-center ">
+              <a href="mailto:borhan.boulandier@gmail.com" className="pl-4">
+                <MailSVG className="w-4 h-4 md:w-6 md:h-6" />
+              </a>
               <h3 className="m-4">borhan.boulandier@gmail.com</h3>
-            </a>
+            </div>
+            <div className="text-sm md:text-base text-left hover:border-[#0C75FF] hover:border-2 hover:bg-[#030D58] md:w-1/2 rounded-xl flex items-center ">
+              <a
+                href="https://goo.gl/maps/sk91BQQFthDrQSQ86"
+                className="pl-4 text-base md:text-2xl"
+              >
+                <FontAwesomeIcon icon={faLocationDot} />
+              </a>
+              <h3 className="m-4">London, United Kingdom</h3>
+            </div>
           </div>
+
+          <span className="flex flex-grow md:ml-4 md:w-1/5 md:items-center justify-end md:justify-evenly">
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              href="https://github.com/BsBou"
+              target={'_blank'}
+              rel="noreferrer"
+            >
+              <GithubSVG className="contact-socials" />
+            </motion.a>
+
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              href="https://www.linkedin.com/in/borhanbou/"
+              target={'_blank'}
+              rel="noreferrer"
+            >
+              <LinkedInSVG className="contact-socials" />
+            </motion.a>
+          </span>
         </div>
-        <div className="md:w-8/12 md:mx-auto md:mr-0 px-3 lg:px-6">
-          <h4 className="text-2xl">Contact Form</h4>
-          <form onSubmit={handleSubmit}>
+        <div className="md:w-2/5 md:mx-auto md:mr-0 p-4 lg:px-6 bg-gray-200 rounded-2xl text-left md:h-[60vh]">
+          <form onSubmit={handleSubmit} className="flex flex-col h-full">
             <div className="form-group mb-6">
+              <label for="user_name">Your name</label>
               <input
                 type="text"
                 name="user_name"
@@ -119,6 +137,8 @@ const Contact = () => {
               />
             </div>
             <div className="form-group mb-6">
+              <label for="user_email">Your email</label>
+
               <input
                 type="email"
                 name="user_email"
@@ -142,9 +162,11 @@ const Contact = () => {
                 required
               />
             </div>
-            <div className="form-group mb-6">
+            <div className="form-group mb-6 flex-grow">
+              <label for="message">Message</label>
+
               <textarea
-                className="
+                className=" h-[86%]
             form-control
             block
             w-full

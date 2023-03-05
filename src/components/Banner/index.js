@@ -21,7 +21,7 @@ const Banner = () => {
       id="banner"
       className="banner flex h-screen justify-center items-center"
     >
-      <Particles init={particlesInit} options={particlesConfig} />
+      {/* <Particles init={particlesInit} options={particlesConfig} /> */}
       <div className="banner-text prevent-select flex flex-col justify-between h-full">
         <div className="h-4/5 flex flex-col justify-center">
           <h1 className="text-6xl text-center font-medium pb-4 md:text-9xl">
