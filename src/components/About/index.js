@@ -62,17 +62,32 @@ const About = () => {
 
         <div className="profile-text flex flex-col text-center basis-2/3 items-center justify-center py-4">
           <div>
-            <h3 className="text-2xl py-4">Hey there! I'm Borhan</h3>
+            <h3 className="text-2xl py-4">Hey! I'm Borhan</h3>
             <p className="text-center text-lg pb-3 italic">
               I've always loved taking things apart and to understand how
               they're put together. My aim when solving problems is to always
               keep a spirit of play and curiosity.
               <br />
               <br />
-              Currently working as freelance Lecturer/Lead Teacher in the Le
-              Wagon Web Development Bootcamp in London, as well as a freelance
-              Web Developer. <br />
-              On the hunt for new opportunities.
+              Currently building APIs at{' '}
+              <a
+                href="https://passentry.com"
+                target="_blank"
+                rel="noreferrer"
+                class="underline"
+              >
+                PassEntry
+              </a>
+              <br />
+              and lecturing part time at{' '}
+              <a
+                href="https://www.lewagon.com/london"
+                target="_blank"
+                rel="noreferrer"
+                class="underline"
+              >
+                Le Wagon London
+              </a>
             </p>
           </div>
         </div>

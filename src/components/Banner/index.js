@@ -29,7 +29,7 @@ const Banner = () => {
             Borhan Boulandier
           </h1>
           <Typed
-            strings={['Full Stack developer']}
+            strings={['Software Engineer']}
             wrapper="div"
             typeSpeed={40}
             className={['text-5xl text-center font-light mx-auto w-[70%]']}
