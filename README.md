@@ -1,7 +1,7 @@
 # [Borhan's Portfolio](https://www.borhan.dev/)
 
 A mobile first portfolio, built in React JS.\
-Check it out at <a href="https://www.borhan.dev/" target="_blank">borhan.dev</a>
+Check it out at [bsbou.github.io](https://bsbou.github.io/)
 
 ## Stack
 
